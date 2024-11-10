@@ -1,14 +1,15 @@
 package com.mn.accounts.dto;
 
+import jakarta.validation.constraints.Max;
+import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotEmpty;
-import jakarta.validation.constraints.Pattern;
 import lombok.Data;
 
 @Data
 public class AccountsDto {
 
-	//@NotEmpty(message = "AccountNumber can not be a null or empty")
-	@Pattern(regexp = "(^$|[0-9]{10})", message = "AccountNumber must be 10 digits")
+	@Min(value = 1_000_000_000L, message = "Account number should be 10 digits")
+	@Max(value= 9_999_999_999L, message = "Account number should be 10 digits")
 	private Long accountNumber;
 
 	@NotEmpty(message = "AccountType can not be a null or empty")
