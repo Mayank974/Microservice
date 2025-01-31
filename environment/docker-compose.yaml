@@ -1,0 +1,19 @@
+version: '3.1'
+
+services:
+  environment_test:
+    image: environment_test:v1
+    ports:
+      - 5001:5000
+    environment:
+      - fi-service.url=http://mnsoft.com
+      - fi-service.username=emp
+      - fi-service.password=system
+  environment_test1:
+    image: environment_test:v1
+    ports:
+      - 5002:5000
+    environment:
+      - fi-service.url=http://mnsoft.com
+      - fi-service.username=Mayank
+      - fi-service.password=password
